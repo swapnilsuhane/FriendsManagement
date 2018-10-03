@@ -1,2 +1,2 @@
 # FriendsManagement
-Friends Management system provides different APIs for social networking 
+Friends Management system (FMS) provides different APIs for social networking 
