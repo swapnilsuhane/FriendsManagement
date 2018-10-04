@@ -35,7 +35,7 @@ public class FMSDao implements BaseDao{
                     FMSRelationDO relationDO= queryConnection(fromEmail, fmsRelationDO.getEmailTo());
                     if(relationDO.isBlocked()){
                         response = MessageConfig.getMessage("FRIEND_BLOCKED_ERROR");
-                    } else if(relationDO.isSubscribed()){
+                    } else if(relationDO.isSubscribed() && !relationDO.isFriend()){
                         relationDO.setFriend(true);
                         updateConnection(fromEmail, relationDO);
                     } else {
