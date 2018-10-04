@@ -18,8 +18,8 @@ NOTE: If API service goes down, please contact me I will start the service again
 
 Launch locally using Jar (attached in repo)
 -------------------------------------------
-1. Download the attached jar
-2. run command: java -jar FMS.jar
+1. Download the attached jar and unzip it your local machine. (https://github.com/swapnilsuhane/FriendsManagement/blob/master/FMS.jar.zip)
+2. run command: java -jar FMS.jar 
 3. Service should be up : http://localhost:8080/swagger-ui.html#/fms-api
 
 
