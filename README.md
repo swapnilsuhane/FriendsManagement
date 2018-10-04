@@ -9,6 +9,7 @@ These API has been deployed into my AWS public cloud
 - Swagger URL : http://52.74.189.137:8080/swagger-ui.html#/fms-api
 
 - Use these IP to call the API-
+
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"friends":["swapnil@example.com","reyom@example.com"]}' \
