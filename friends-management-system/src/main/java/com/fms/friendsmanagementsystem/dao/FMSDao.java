@@ -1,6 +1,7 @@
 package com.fms.friendsmanagementsystem.dao;
 
 import com.fms.friendsmanagementsystem.domain.FMSRelationDO;
+import com.fms.friendsmanagementsystem.util.MessageConfig;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedHashSet;
@@ -33,12 +34,12 @@ public class FMSDao implements BaseDao{
                 } else {
                     FMSRelationDO relationDO= queryConnection(fromEmail, fmsRelationDO.getEmailTo());
                     if(relationDO.isBlocked()){
-                        response = "Friend is blocked";
+                        response = MessageConfig.getMessage("FRIEND_BLOCKED_ERROR");
                     } else if(relationDO.isSubscribed()){
                         relationDO.setFriend(true);
                         updateConnection(fromEmail, relationDO);
                     } else {
-                        response = "Already a Friend";
+                        response = MessageConfig.getMessage("ALREADY_FRIEND_ERROR");
                     }
                 }
 

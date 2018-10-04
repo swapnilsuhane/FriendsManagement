@@ -2,6 +2,7 @@ package com.fms.friendsmanagementsystem.controller;
 
 import com.fms.friendsmanagementsystem.dao.FMSDao;
 import com.fms.friendsmanagementsystem.domain.FMSRelationDO;
+import com.fms.friendsmanagementsystem.util.MessageConfig;
 import com.fms.friendsmanagementsystem.validate.FMSValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,12 +63,12 @@ public class FMSController implements BaseController{
 
     public String subscribeFriend(String requestor, String target){
         if(FMSValidator.isInValidEmail(requestor) || FMSValidator.isInValidEmail(target)){
-            return "Invalid Email address";
+            return MessageConfig.getMessage("INVALID_EMAIL_ERROR");
         }
         boolean alreadyFriend = isFriendAlreadyExists(requestor, target);
 
         if(alreadyFriend) {
-            return "requestor already a friend, can not subscribe"; //todo
+            return MessageConfig.getMessage("SUBSCRIBER_ALREADY_FRIEND_ERROR");
         }
 
         FMSRelationDO fmsRelationDO = new FMSRelationDO();
@@ -81,7 +82,7 @@ public class FMSController implements BaseController{
 
     public String blockFriend(String requestor, String target){
         if(FMSValidator.isInValidEmail(requestor) || FMSValidator.isInValidEmail(target)){
-            return "Invalid Email address";
+            return MessageConfig.getMessage("INVALID_EMAIL_ERROR");
         }
         FMSRelationDO fmsRelationDO = fmsDao.queryConnection(requestor, target);
 
