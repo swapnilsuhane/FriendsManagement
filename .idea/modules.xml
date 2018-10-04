@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/FriendsManagement.iml" filepath="$PROJECT_DIR$/.idea/FriendsManagement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/friends-management-system/friends-management-system.iml" filepath="$PROJECT_DIR$/friends-management-system/friends-management-system.iml" />
     </modules>
   </component>
 </project>
